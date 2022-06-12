@@ -1,0 +1,88 @@
+/*html,body{
+	margin: 0;
+	padding: 0;
+}*/
+body{
+
+	background-image: linear-gradient(-45deg, rgb(100,100,100) 0%, rgb(200,200,200) 100%), url("/airdrop/background.png");
+	background-repeat: no-repeat;
+	background-size: 100%,100%;
+	background-blend-mode: multiply;
+	background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+}
+
+
+#dropbox{
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-blend-mode: multiply;
+	background-attachment: fixed;
+	background-position: bottom;
+	background-size: contain;
+}
+
+#p1{
+	position: relative;
+	left: 0px;
+	top: 50%;
+	font-size: 30px;
+	text-align: center;
+	visibility: visible;
+}
+.NoDisplay{
+	/*visibility: hidden;*/
+	display: none;
+}
+
+.Display{
+	display: inline;
+	opacity: 0;
+	width: 100vw;
+	height: 100vw;
+}
+
+#filelister{
+	position: relative;
+	top: 0%;
+}
+
+.del{
+	background-color: red;
+}
+
+#progress_text{
+	font-size: medium;
+	font-family: arial,sans-serif;
+	position: absolute;
+	right: 3vw;
+	bottom:6vh;
+	visibility: hidden;
+}
+
+#progress{
+	width: 25vw;
+	height: 1.5vh;
+	border-radius: 1.5vh;
+	background: #ccc;
+	position: absolute;
+	right: 3vw;
+	bottom:5vh;
+	visibility: hidden;
+}
+#progress_bar{
+	width: 15vw;
+	height: inherit;
+	border-radius: 1.5vh 1.5vh 1.5vh 1.5vh;
+	/*background: #0f0;*/
+	background: linear-gradient(90deg,#62f,#22d);
+	visibility: hidden;
+	/*position: absolute;*/
+	/*bottom:15px;*/
+}
+

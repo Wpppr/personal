@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='zh'>
+
+<head>
+	<meta charset='utf-8'>
+	<title>airdrop</title>
+	<link rel="shortcut icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/airdrop.css')}}">
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="{{url_for('static',filename='js/airdrop.js')}}"></script>
+</head>
+
+<body>
+	
+    <div id="dropbox" >
+    	<p id='p1'>把文件拖到这里或者双击</p>
+    	<div id="filelister">
+	    	<ul>
+	    		{% for dict in dictlist %}
+		    	<li>
+					<a href="{{url_for('static',filename=dict.file)}}" download="{{dict.download_name}}" class="lists">
+<!--						图片-->
+						{% if dict.type=='png' or dict.type=='jpg' or dict.type=='jpeg' %}
+						<img src="{{url_for('static',filename=dict.file)}}" width="100px" height="100px" class="lists">
+						{% else %}
+<!--						文件-->
+		    			<img src="{{url_for('static',filename='img/logo.png')}}" width="100px" height="100px" class="lists">
+						{% endif %}
+						<p class="lists">{{dict.download_name}}</p>
+		    		</a>
+					<!--					删除的按钮-->
+		    		<button class="del" name="{{dict.download_name}}">delete</button>
+		    	</li>
+		    	{% endfor %}
+	    	</ul>
+	    	<input type="file" id="fileInput" class="NoDisplay" multiple="mutiple"/>
+	    </div>
+	    <div>
+	    	<p id="progress_text">0MB/0MB</p>
+	    	<div id="progress">
+				<div id="progress_bar"></div>
+			</div>
+	    </div>
+		
+    </div>
+
+
+</body>
+
+
+
+
